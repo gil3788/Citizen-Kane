@@ -1,0 +1,241 @@
+import openpyxl
+import json
+from pprint import pprint
+from openpyxl.styles import Alignment 
+with open("GTM-NTSSB9_v34.json", encoding='utf-8') as dataFile:
+    jsonData=json.loads(dataFile.read())
+
+
+
+
+GTMName=jsonData["containerVersion"]["container"]["name"]
+
+GTMContainerId=jsonData["containerVersion"]["container"]["publicId"]
+
+testValueType=jsonData["containerVersion"]["tag"][0]["type"]
+testValueAdvertiserId=jsonData["containerVersion"]["tag"][2]["parameter"][4]["value"]
+
+
+
+
+
+
+#len1=len(jsonData["containerVersion"]["trigger"])
+
+#dildo=jsonData["containerVersion"]["tag"][0]["name"]
+
+#dildo2=jsonData["containerVersion"]["tag"][1]["name"]
+
+#dildo3=jsonData["containerVersion"]["tag"][2]["name"]
+
+#dildo4=jsonData["containerVersion"]["trigger"][0]["name"]
+
+dildo5=jsonData["containerVersion"]["trigger"][0]["filter"][0]["type"]
+
+print(dildo5)
+
+#dildo6=jsonData["containerVersion"]["trigger"][0]["filter"][0]["type"]
+
+#dildo7=jsonData["containerVersion"]["trigger"][0]["filter"][0]["parameter"][0]["value"]
+
+
+#dildo8=jsonData["containerVersion"]["trigger"][0]["filter"][0]["parameter"][1]["value"]
+
+
+##load workbook/excel file and store it as an object. Excel file must be in the same directory##
+workBook=openpyxl.load_workbook('example.xlsx')
+#################
+type(workBook)
+##Modify excel headers###
+workSheet0=workBook.get_sheet_by_name("Sheet1")
+workSheet0["A5"].value=" "
+workSheet0["A6"].value=" "
+workSheet0["A7"].value=" "
+workSheet0["B1"].value=" "
+workSheet0["B2"].value=" "
+workSheet0["B5"].value=" "
+workSheet0["B6"].value=" "
+workSheet0["B7"].value=" "
+workSheet0["C1"].value=" "
+workSheet0["C2"].value=" "
+workSheet0["C3"].value=" "
+workSheet0["C4"].value=" "
+workSheet0["C5"].value=" "
+workSheet0["C6"].value=" "
+workSheet0["C7"].value=" "
+workSheet0["A1"].value="DoubleClick Advertiser Id "
+workSheet0["A2"].value=testValueAdvertiserId
+workSheet0["A3"].value="GTM Container Name"
+workSheet0["A4"].value=GTMName
+workSheet0["B3"].value="GTM Container Id"
+workSheet0["B4"].value=GTMContainerId
+workSheet0.title="General Client Information"
+workSheet0.header_footer.center_header.font_size=14
+workSheet0.header_footer.center_header.font_name="Tahoma, Bold"
+workSheet0.header_footer.center_header.font_color="CC3366"
+workSheet1=workBook.get_sheet_by_name("Sheet2")
+workSheet1.title="Programmatic Framework"
+workSheet1.header_footer.center_header.font_size=14
+workSheet1.header_footer.center_header.font_name="Tahoma, Bold"
+workSheet1.header_footer.center_header.font_color="CC3366"
+
+workSheet2=workBook.get_sheet_by_name("Sheet3")
+workSheet2.title="Variables"
+workSheet2.header_footer.center_header.font_size=14
+workSheet2.header_footer.center_header.font_name="Tahoma, Bold"
+workSheet2.header_footer.center_header.font_color="CC3366"
+
+##modify additional properties from excel doc##
+wsproperties1=workSheet1.sheet_properties
+wsproperties0=workSheet0.sheet_properties
+wsproperties2=workSheet2.sheet_properties
+wsproperties1.tabColor="1072BA"
+wsproperties0.tabColor="1072BA"
+wsproperties2.tabColor="1072BA"
+##command to obtain workbook sheet names and store inside an array## 
+arraySheetNames=workBook.get_sheet_names()
+#print(arraySheetNames)
+##################
+
+##command to get a sheet form workbook by name##
+sheet1=workBook.get_sheet_by_name('Programmatic Framework')
+sheet2=workBook.get_sheet_by_name('Variables')
+#print(sheet1)
+########
+
+##command to align cell contents in Excel Sheet##
+alignment=Alignment(horizontal="center",vertical="bottom", text_rotation=0, wrap_text=False, shrink_to_fit=True, indent=0)
+##########
+
+##commands to format Excel cell dimensions##
+sheet1.column_dimensions["A"].width=70
+sheet1.column_dimensions["B"].width=70
+sheet1.column_dimensions["C"].width=70
+sheet1.column_dimensions["D"].width=70
+
+sheet2.column_dimensions["A"].width=70
+sheet2.column_dimensions["B"].width=70
+sheet2.column_dimensions["C"].width=70
+sheet2.column_dimensions["D"].width=70
+##############################
+
+
+
+
+
+
+
+
+
+###Tag,Trigger and Variable Initialization################################################
+tagListSize=len(jsonData["containerVersion"]["tag"])
+triggerListSize=len(jsonData["containerVersion"]["trigger"])
+variableListSize=len(jsonData["containerVersion"]["variable"])
+
+
+###Ordering Tags and Triggers####THIS SHIT WORKS!!!!!!########IMPORTANT####################################
+TagObject=jsonData["containerVersion"]["tag"]
+TriggerObject=jsonData["containerVersion"]["trigger"]
+macroCounter=0
+controlledIndex=0
+orderedObject={}
+triggerOrderedObject={}
+filterOrderedObject={}
+while macroCounter<tagListSize:
+    
+    microCounter=0
+    while microCounter<triggerListSize:
+       
+        tagCompare=TagObject[macroCounter]["firingTriggerId"][0]
+        triggerCompare=TriggerObject[microCounter]["triggerId"]
+        if tagCompare==triggerCompare:
+            
+##add a counter inside "if" to make sure the index is organized properly#########
+            orderedObject["tag"+str(controlledIndex)]=jsonData["containerVersion"]["tag"][macroCounter]["name"]
+            triggerOrderedObject["trigger"+str(controlledIndex)]=jsonData["containerVersion"]["trigger"][microCounter]["name"]
+            filterType=jsonData["containerVersion"]["trigger"][microCounter]["filter"][0]["type"]
+            filterCondition1=jsonData["containerVersion"]["trigger"][microCounter]["filter"][0]["parameter"][0]["value"]
+            filterCondition2=jsonData["containerVersion"]["trigger"][microCounter]["filter"][0]["parameter"][1]["value"]
+            filterData=filterCondition1+" "+filterType+" "+filterCondition2
+            filterOrderedObject["filter"+str(controlledIndex)]=filterData
+            controlledIndex=controlledIndex+1
+           
+            
+        microCounter=microCounter+1
+    macroCounter=macroCounter+1            
+##print(filterType)
+print(len(orderedObject))
+counter=0
+while counter<len(orderedObject):
+    pprint(orderedObject["tag"+str(counter)])
+    pprint(triggerOrderedObject["trigger"+str(counter)])
+    pprint(filterOrderedObject["filter"+str(counter)])
+    tagSheetIndex="A"+str(counter+2)
+    sheet1["A1"].value="GTM Tag Name"
+    triggerSheetIndex="B"+str(counter+2)
+    triggerSheetIndex1="C"+str(counter+2)
+    sheet1["B1"].value="GTM Trigger Name"
+    sheet1["C1"].value="GTM Filter"
+    sheet1[tagSheetIndex].value=orderedObject["tag"+str(counter)]
+    sheet1[triggerSheetIndex].value=triggerOrderedObject["trigger"+str(counter)]
+    sheet1[triggerSheetIndex1].value=filterOrderedObject["filter"+str(counter)]
+    counter=counter+1
+
+
+
+
+#################IMPORTANT##################################################################################
+
+
+counter=0
+tagList=[]
+
+triggerList=[]
+
+variableList=[]
+pprint(tagListSize)
+pprint(triggerListSize)
+if tagListSize>0:
+    while counter<tagListSize:
+        
+        counter=counter+1
+###triggerInitialization##############################################
+counter=0
+if triggerListSize>0:
+    while counter<triggerListSize:
+       
+        counter=counter+1
+
+###variableInitialization###########################################
+
+counter=0
+controlledVarIndex=0
+while counter<variableListSize:
+    typeVarValidator=jsonData["containerVersion"]["variable"][counter]["type"]
+    if typeVarValidator=="v":
+        gtmVariableName=jsonData["containerVersion"]["variable"][counter]["name"]
+        variableNameWebsite=jsonData["containerVersion"]["variable"][counter]["parameter"][2]["value"]
+        variableSheetIndex="A"+str(counter+2)
+        variableSheetIndex1="B"+str(counter+2)
+        sheet2["A1"].value="GTM Variable Name"
+        sheet2["B1"].value="Variable Name Website Backend"
+        sheet2[variableSheetIndex].value=gtmVariableName
+        sheet2[variableSheetIndex1].value=variableNameWebsite
+        controlleVarIndex=controlledVarIndex+1
+    counter=counter+1
+
+####################################################################
+
+
+
+##command to save actions on a excel workbook or to create a new excel file. Name determines which action to part take##
+workBook.save('example1.xlsx')
+###############
+workBook.save("Programmatic Framework: "+GTMName+" "+".xlsx")        
+        
+    
+
+
+
+    
+

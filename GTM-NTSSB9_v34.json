@@ -1,0 +1,1460 @@
+{
+    "exportFormatVersion": 1.3,
+    "exportTime": "2016-04-14 01:59:52",
+    "containerVersion": {
+        "accountId": "54369644",
+        "containerId": "2115345",
+        "containerVersionId": "0",
+        "deleted": false,
+        "container": {
+            "accountId": "54369644",
+            "containerId": "2115345",
+            "name": "Unitec MX",
+            "publicId": "GTM-NTSSB9",
+            "timeZoneCountryId": "US",
+            "timeZoneId": "America/Los_Angeles",
+            "notes": "",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1460566576057",
+            "enabledBuiltInVariable": [
+                "PAGE_URL",
+                "PAGE_HOSTNAME",
+                "PAGE_PATH",
+                "REFERRER",
+                "EVENT",
+                "CLICK_ELEMENT",
+                "CLICK_CLASSES",
+                "CLICK_ID",
+                "CLICK_TARGET",
+                "CLICK_URL",
+                "CLICK_TEXT",
+                "FORM_ELEMENT",
+                "FORM_CLASSES",
+                "FORM_ID",
+                "FORM_TARGET",
+                "FORM_URL",
+                "FORM_TEXT",
+                "ERROR_MESSAGE",
+                "ERROR_URL",
+                "ERROR_LINE",
+                "NEW_HISTORY_FRAGMENT",
+                "OLD_HISTORY_FRAGMENT",
+                "NEW_HISTORY_STATE",
+                "OLD_HISTORY_STATE",
+                "HISTORY_SOURCE",
+                "CONTAINER_VERSION",
+                "DEBUG_MODE",
+                "RANDOM_NUMBER",
+                "CONTAINER_ID",
+                "HTML_ID",
+                "ENVIRONMENT_NAME"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "tagId": "1",
+                "name": "00-FLC-Unitec.mx-Home Page",
+                "type": "flc",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "groupTag",
+                        "value": "flcuni"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useImageTag",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "activityTag",
+                        "value": "00-fl0"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ordinalType",
+                        "value": "STANDARD"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "advertiserId",
+                        "value": "3921057"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "4"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "tagId": "5",
+                "name": "01-Custom Tag-Unitec.mx-Campus",
+                "type": "html",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  url=document.URL;\n  \n  \n  if(url.search(\"/campus-\")!=-1)\n  {\n  \turlPathName=window.location.pathname;\n    \turlPathName=urlPathName.replace(/\\//g,\"\");\n    \turlPathName=urlPathName.replace(/-/g,\" \");\n    \tdataLayer.push({\"flc-campusVariable\":urlPathName, event:\"fireTag_01\"});\n        localStorage.setItem(\"persistentValidator\",\"firedTag_01\");\n  }\n  \n  \n  \n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "6"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "tagId": "6",
+                "name": "01-FLC-Unitec.mx-Campus",
+                "type": "flc",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "LIST",
+                        "key": "customVariable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "u1"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{u1-flc-campusVariable}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "groupTag",
+                        "value": "flcuni"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useImageTag",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "activityTag",
+                        "value": "01-fl0"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ordinalType",
+                        "value": "STANDARD"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "advertiserId",
+                        "value": "3921057"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "8"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "tagId": "4",
+                "name": "02-Custom Tag-Unitec.mx-Oferta Educativa-Departamento",
+                "type": "html",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  url=document.URL;\n \n  if(url.search(\"/ingenieria/\") !=-1 || url.search(\"/licenciatura/\") !=-1 || url.search(\"/maestria/\") !=-1 || url.search(\"/prepa/\") !=-1 || url.search(\"/especialidad/\") !=-1)\n  {\n    if(validator!=\"firedTag_02\")\n      {\n  \t\turlPathName=window.location.pathname;\n    \turlPathName=urlPathName.replace(/\\//g,\"\");\n    \turlPathName=urlPathName.replace(/-/g,\" \");\n    \tdataLayer.push({\"flc-departamentoVariable\":urlPathName, event:\"fireTag_02\"});\n        validator=\"firedTag_02\";\n        \n      }\n    \n   }\n  \n  \n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "7"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "tagId": "7",
+                "name": "02-FLC-Unitec.mx-Oferta Educativa-Departamento",
+                "type": "flc",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "LIST",
+                        "key": "customVariable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "u2"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{u2-flc-departementoVariable}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "groupTag",
+                        "value": "flcuni"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useImageTag",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "activityTag",
+                        "value": "02-fl0"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ordinalType",
+                        "value": "STANDARD"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "advertiserId",
+                        "value": "3921057"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "9"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "tagId": "3",
+                "name": "03-Custom Tag-Unitec.mx-Oferta Educativa-Carrera",
+                "type": "html",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  url=document.URL;\n\n  \n  if(url.search(\"/campus-\")!=-1)\n  {\n  \titem=document.getElementsByClassName(\"cont-linea-title ln-content\");\n    if(item.length !=0 && item[0].textContent !=\"\")\n    {\n        validator=document.getElementById(\"frmTradicional\");\n      if(validator.hasAttribute(\"style\") && (validator.getAttribute(\"style\")==\"display: none;\" || validator.getAttribute(\"style\")==\"display:none;\"))\n        {\n    \t\tcarreraVariable=item[0].textContent;\n        \tcarreraVariable=carreraVariable.toLowerCase();\n        \tdataLayer.push({\"flc-carreraVariable\":carreraVariable, event:\"fireTag_03\"});\n        }\n        \n      \n    }\n  }\n  \n  \n  \n  \n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "7"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "tagId": "8",
+                "name": "03-FLC-Unitec.mx-Oferta Educativa-Carrera",
+                "type": "flc",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "LIST",
+                        "key": "customVariable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "u3"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{u3-flc-carreraVariable}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "groupTag",
+                        "value": "flcuni"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useImageTag",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "activityTag",
+                        "value": "03-fl0"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ordinalType",
+                        "value": "STANDARD"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "advertiserId",
+                        "value": "3921057"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "10"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "tagId": "9",
+                "name": "03a-Custom Tag-Unitec.mx-Oferta Educativa-Carrera",
+                "type": "html",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  url=document.URL;\n  \n  \n  if(url.search(\"/ingenieria-\") !=-1 || url.search(\"/licenciatura-\") !=-1 || url.search(\"/maestria-\") !=-1 || url.search(\"/prepa\") !=-1 || url.search(\"/especialidad-\") !=-1)\n  {\n      \n  \t\turlPathName=window.location.pathname;\n    \turlPathName=urlPathName.replace(/\\//g,\"\");\n    \turlPathName=urlPathName.replace(/-/g,\" \");\n    \tdataLayer.push({\"flc-carreraVariable\":urlPathName, event:\"fireTag_03\"});\n        \n    \n   }\n  \n  \n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "11"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "tagId": "2",
+                "name": "04-FLC-Unitec.mx-Formulario Paso 1 Tag",
+                "type": "flc",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "groupTag",
+                        "value": "flcuni"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useImageTag",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "activityTag",
+                        "value": "04-fl0"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ordinalType",
+                        "value": "STANDARD"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "advertiserId",
+                        "value": "3921057"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "5"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "tagId": "10",
+                "name": "05-FLC-Unitec.mx-Formulario Paso 2 Tag",
+                "type": "flc",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "groupTag",
+                        "value": "flcuni"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useImageTag",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "activityTag",
+                        "value": "05-fl0"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ordinalType",
+                        "value": "STANDARD"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "advertiserId",
+                        "value": "3921057"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "5"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "tagId": "11",
+                "name": "06-FLC-Unitec.mx-Lead Generation Tag",
+                "type": "flc",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "LIST",
+                        "key": "customVariable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "u4"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{u4-flc-registroOrigenLeadVariable}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "u5"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{u5-flc-registroIsAlumVariable}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "u6"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{u6-flc-registroIngressVariable}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "u7"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{u7-flc-registroStateVariable}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "u8"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{u8-flc-registroLevelStudiesVariable}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "u9"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{u9-flc-PeriodVariable}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "u10"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{u10-flc-registroCampusVariable}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "groupTag",
+                        "value": "flcuni"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useImageTag",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "activityTag",
+                        "value": "06-fl0"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ordinalType",
+                        "value": "STANDARD"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "advertiserId",
+                        "value": "3921057"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "13"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "tagId": "12",
+                "name": "0A-FLC-Unitec.mx-Chat Lead Generation Tag",
+                "type": "flc",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "groupTag",
+                        "value": "flcuni"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useImageTag",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "activityTag",
+                        "value": "0a-fl0"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ordinalType",
+                        "value": "STANDARD"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "advertiserId",
+                        "value": "3921057"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "14"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "tagId": "13",
+                "name": "0B-FLC-Unitec.mx-Calculadora Lead Tag",
+                "type": "flc",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "groupTag",
+                        "value": "flcuni"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useImageTag",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "activityTag",
+                        "value": "0b-fl0"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ordinalType",
+                        "value": "STANDARD"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "advertiserId",
+                        "value": "3921057"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "15"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            }
+        ],
+        "fingerprint": "0",
+        "trigger": [
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "triggerId": "4",
+                "name": "00-FLC-Unitec.mx-Home Page",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "http://www.unitec.mx/"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1460083590450"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "triggerId": "6",
+                "name": "01-Custom Tag-Unitec.mx-Campus Trigger",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Path}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/campus-"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1460475958870"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "triggerId": "8",
+                "name": "01-FLC-Unitec.mx-Campus Trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "fireTag_01"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1460475998203"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "triggerId": "9",
+                "name": "02-FLC-Unitec.mx-Departemento Trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "fireTag_02"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1460478073760"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "triggerId": "10",
+                "name": "03-FLC-Unitec.mx-Oferta Eductavia-Carrera Trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "fireTag_03"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1460478616066"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "triggerId": "11",
+                "name": "03a.Custom Tag-Unitec.mx-Oferta Academica-Carrera",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "gtm.js"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1460489029744"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "triggerId": "5",
+                "name": "04-FLC-Unitec.mx-Formulario Paso 1 Trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "StepForm"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{url value}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "formularioInformacion/paso1"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1460495187826"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "triggerId": "12",
+                "name": "05-FLC-Unitec.mx-Formulario Paso 2 Trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "StepForm"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{url value}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "formularioInformacion/paso2"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1460496704727"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "triggerId": "13",
+                "name": "06-FLC-Unitec.mx-Lead Generation Trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "leadGeneration"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1460497313831"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "triggerId": "14",
+                "name": "0A-FLC-Unitec.mx-Chat Lead Generation Trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "leadGenerationChat"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "leadGenerationChat"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1460565769876"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "triggerId": "15",
+                "name": "0B-FLC-Unitec.mx-Calculadora Leads Trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{url value}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "sec-R"
+                            },
+                            {
+                                "type": "BOOLEAN",
+                                "key": "negate",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1460559257370"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "triggerId": "7",
+                "name": "All Clicks Trigger",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "\"all pages\""
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1460566568969"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "variableId": "2",
+                "name": "u1-flc-campusVariable",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "flc-campusVariable"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "variableId": "11",
+                "name": "u10-flc-registroCampusVariable",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "campus"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "variableId": "4",
+                "name": "u2-flc-departementoVariable",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "departamentoVariable"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "variableId": "3",
+                "name": "u3-flc-carreraVariable",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "flc-carreraVariable"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "variableId": "5",
+                "name": "u4-flc-registroOrigenLeadVariable",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "origenLead"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "variableId": "6",
+                "name": "u5-flc-registroIsAlumVariable",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "isAlum"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "variableId": "7",
+                "name": "u6-flc-registroIngressVariable",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ingress"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "variableId": "8",
+                "name": "u7-flc-registroStateVariable",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "state"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "variableId": "9",
+                "name": "u8-flc-registroLevelStudiesVariable",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "levelStudies"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "variableId": "10",
+                "name": "u9-flc-PeriodVariable",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "Period"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "54369644",
+                "containerId": "2115345",
+                "variableId": "1",
+                "name": "url value",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "url_value"
+                    }
+                ],
+                "fingerprint": "0"
+            }
+        ]
+    }
+}
