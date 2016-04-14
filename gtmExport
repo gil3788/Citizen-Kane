@@ -16,32 +16,6 @@ testValueType=jsonData["containerVersion"]["tag"][0]["type"]
 testValueAdvertiserId=jsonData["containerVersion"]["tag"][2]["parameter"][4]["value"]
 
 
-
-
-
-
-#len1=len(jsonData["containerVersion"]["trigger"])
-
-#dildo=jsonData["containerVersion"]["tag"][0]["name"]
-
-#dildo2=jsonData["containerVersion"]["tag"][1]["name"]
-
-#dildo3=jsonData["containerVersion"]["tag"][2]["name"]
-
-#dildo4=jsonData["containerVersion"]["trigger"][0]["name"]
-
-dildo5=jsonData["containerVersion"]["trigger"][0]["filter"][0]["type"]
-
-print(dildo5)
-
-#dildo6=jsonData["containerVersion"]["trigger"][0]["filter"][0]["type"]
-
-#dildo7=jsonData["containerVersion"]["trigger"][0]["filter"][0]["parameter"][0]["value"]
-
-
-#dildo8=jsonData["containerVersion"]["trigger"][0]["filter"][0]["parameter"][1]["value"]
-
-
 ##load workbook/excel file and store it as an object. Excel file must be in the same directory##
 workBook=openpyxl.load_workbook('example.xlsx')
 #################
